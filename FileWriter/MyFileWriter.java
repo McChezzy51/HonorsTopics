@@ -19,7 +19,7 @@ public class MyFileWriter {
         }
 
         // 2. Using BufferedWriter
-        try (BufferedWrwfefeeeiter bufferedWriter = new BufferedWriter(new FileWriter(fileName2))) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(fileName2))) {
             bufferedWriter.write(data);
         } catch (IOException e) {
             e.printStackTrace();
