@@ -45,5 +45,24 @@ public class MyFileWriter {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        createHiddenFile();
+        createRegularFileInHiddenFolder();
+    }
+
+    public static void createHiddenFile() {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(".secretfile.txt"))) {
+            bufferedWriter.write("MyPassword12345");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void createRegularFileInHiddenFolder() {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(".secret/ordinaryfile.txt"))) {
+            bufferedWriter.write("CONFIDENTIAL: Gandhi's affair with Beyonce EXPOSED!!");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
